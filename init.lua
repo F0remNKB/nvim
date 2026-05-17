@@ -110,6 +110,13 @@ require("lazy").setup({
     { "mfussenegger/nvim-dap" },
     { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
     { "folke/trouble.nvim", opts = {} },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        ---@module "ibl"
+        ---@type ibl.config
+        opts = {},
+    },
 })
 
 require("onedarkpro").setup({
@@ -142,6 +149,7 @@ require("bufferline").setup()
 require("gitsigns").setup()
 require("telescope").load_extension("projects")
 require("dapui").setup()
+require("ibl").setup()
 local dap = require("dap")
 dap.adapters.codelldb = {
     type = "server",
